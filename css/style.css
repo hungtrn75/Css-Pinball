@@ -59,7 +59,7 @@ body {
   outline: none;
   border: var(--shadow-line);
   background-color: var(--color-background);
-  padding: 1rem .5rem;
+  padding: .5rem 1rem;
   box-sizing: border-box;
 }
 .header .user {
@@ -113,7 +113,8 @@ body {
   align-items: center;
   padding: 0 1.3rem;
 }
-.film__review .star, .film__review .facebook {
+.film__review .star,
+.film__review .facebook {
   height: 2rem;
   width: 2rem;
   fill: var(--color-text);
@@ -151,6 +152,14 @@ body {
   font-weight: 400;
 }
 
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .load {
   flex: 0 0 100%;
   display: flex;
@@ -162,6 +171,7 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   fill: var(--color-text);
+  animation: rotating 1s linear infinite;
 }
 .load-text {
   margin-left: 1.5rem;
