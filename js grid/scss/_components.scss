@@ -44,19 +44,20 @@
 
 .film {
     display: inline-block;
-    width: 25.625rem;
+    width: 256.25px;
     position: absolute;
     padding: 1rem;
     top: 0;
     left: 0;
+    transition: transform .3s;
     &__details {
         background-color: var(--color-primary);
         box-shadow: var(--shadow-film);
         border-radius: 2px;
-        width: 24rem;
+        width: 240px;
     }
     &__image {
-        width: 24rem;
+        width: 240px;
         background-repeat: no-repeat;
         background-size: cover;
     }
