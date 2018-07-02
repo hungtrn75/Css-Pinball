@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Pinball</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -378,15 +379,15 @@
         }
         return shortestIndex;
     }
+    $(document).ready(function() {
+        try {
+            let items = [].slice.call(document.getElementsByClassName("film"));
+            let films = document.getElementsByClassName('content-film');
+            let filmWidth = films[0].clientWidth;
+            let itemWidth = items[0].clientWidth;
+            let numCols = Math.floor(filmWidth / itemWidth);
+            let colHeights = new Array(numCols);
 
-    try {
-        let items = [].slice.call(document.getElementsByClassName("film"));
-        let films = document.getElementsByClassName('content-film');
-        let filmWidth = films[0].clientWidth;
-        let itemWidth = items[0].clientWidth;
-        let numCols = Math.floor(filmWidth / itemWidth);
-        let colHeights = new Array(numCols);
-        setTimeout(() => {
             for (let i = 0; i < items.length; i++) {
                 if (i < numCols) {
                     colHeights[i] = 0;
@@ -399,10 +400,7 @@
             }
             let heightFilm = colHeights.reduce((a, b) => a > b ? a : b);
             films[0].style.height = heightFilm + 'px';
-        }, 200)
-
-
-    } catch (e) {}
-    
+        } catch (e) {}
+    });
     </script>
 </body>
