@@ -379,7 +379,7 @@
         }
         return shortestIndex;
     }
-    $(document).ready(function() {
+    $(window).bind("load", function() {
         try {
             let items = [].slice.call(document.getElementsByClassName("film"));
             let films = document.getElementsByClassName('content-film');
